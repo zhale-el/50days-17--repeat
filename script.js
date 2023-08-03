@@ -10,6 +10,7 @@ const options = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NjY5ZjAyZDMxZmRiMjRiY2NlZDBlMGZlMzZlYThmYyIsInN1YiI6IjY0YzhjN2Q2Zjc5NGFkMDBhZDA1N2ZmYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vqPJoxtTIyLgOmm5v9cVF8QVgjeJh2Hx0ZZV6sAaIEY",
   },
 };
+const main = document.querySelector("#main");
 const form = document.querySelector("form");
 const search = document.querySelector("#search");
 
@@ -19,8 +20,10 @@ getMovies(API_URL);
 async function getMovies(api) {
   const data = await fetch(api, options);
   const res = await data.json();
-  console.log(res.results);
+  showMovies(res.results);
 }
+
+function showMovies() {}
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
