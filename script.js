@@ -25,9 +25,9 @@ async function getMovies(api) {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const serchTerm = search.value;
-  if (serchTerm && serchTerm != "") {
-    getMovies(SEARCH_API + serchTerm);
+  const searchTerm = search.value;
+  if (searchTerm && searchTerm != "") {
+    getMovies(SEARCH_API + searchTerm);
   } else {
     window.location.reload();
   }
